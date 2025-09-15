@@ -39,7 +39,7 @@ const products = [
     id: 5,
     name: "Nike Air Zoom Pegasus",
     price: 8499,
-    image: "https://rukminim2.flixcart.com/image/200/200/xif0q/computer/k/l/1/-original-imahfughurxbbz3x.jpeg?q=70",
+    image: "https://rukminim2.flixcart.com/image/200/200/xif0q/shoe/a/u/d/5-5-hj1102-401-5-5-nike-lt-armory-blue-diffused-blue-ashen-slate-original-imahejuhzbdrqwn3.jpeg?q=70",
     description: "Comfortable running shoes with responsive cushioning and stylish design.",
     category: "Footwear",
     stock: 25

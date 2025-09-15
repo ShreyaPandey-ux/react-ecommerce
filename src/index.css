@@ -2,64 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Your custom CSS */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Navbar */
+/* Base Navbar Styles */
 .navbar {
-  height: 60px;               /* Fixed height */
-  background-color: #1D4ED8;  /* Tailwind bg-blue-600 equivalent */
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  box-sizing: border-box;
+  background: #2874f0;
+  color: white;
+  padding: 5px 10px;
+  width: 100%;
+  box-sizing: border-box; 
+  overflow-x: hidden;     
 }
 
-.navbar .brand {
+.brand {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
+  margin: 0;   /* ✅ removed any margin */
 }
 
-.navbar input[type="text"] {
+.search-container {
   flex: 1;
-  margin: 0 16px;
-  padding: 8px;
-  border-radius: 4px;
+  margin: 0 5px; 
+}
+
+.search-input {
+  width: 100%;
+  padding: 4px 6px;
+  border-radius: 5px;
   border: none;
-  font-size: 1rem;
+  outline: none;
 }
 
-.navbar .cart-btn {
-  position: relative;
-  background-color: #2563EB;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.navbar .cart-btn:hover {
-  background-color: #1E40AF;
-}
-
-.navbar .cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: red;
-  color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  font-size: 0.75rem;
+.right-buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+}
+
+.search-toggle,
+.cart-btn-mobile {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* 🔹 Media Queries */
+@media (max-width: 768px) {
+  .brand {
+    font-size: 1.2rem;
+    margin: 0;   /* ✅ remove left margin */
+margin-left: 0;  
+  }
+
+  .search-container {
+    flex: unset;
+    width: 50%;
+    margin: 0;   /* ✅ remove margins */
+    margin-left: 0;
+  }
+
+  .right-buttons {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1rem;
+    margin: 0;   /* ✅ no left margin on small phones */
+  }
+
+  .search-container {
+    width: 45%;
+    margin: 0;   /* ✅ remove margins */
+    margin-left: 0;
+  }
+
+  .right-buttons {
+    gap: 3px;
+  }
 }
