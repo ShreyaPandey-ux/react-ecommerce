@@ -32,12 +32,9 @@ export default function Navbar() {
 
       {/* Right buttons */}
       <div className="right-buttons">
-        {/* Search toggle (mobile) */}
-        <button className="search-toggle" onClick={() => setSearchOpen(!searchOpen)}>
-          🔍
-        </button>
+      
         {/* Cart button for mobile */}
-      <button className="cart-btn-mobile" onClick={() => navigate("/cart")}>
+      <button className=" mx-3 cart-btn-mobile" onClick={() => navigate("/cart")}>
         🛒
         {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
       </button>

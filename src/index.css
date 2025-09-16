@@ -3,99 +3,170 @@
 @tailwind utilities;
 
 /* Base Navbar Styles */
+/* Navbar container */
+/* Reset unwanted spacing */
+/* Navbar container */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #2874f0;
-  color: white;
-  padding: 5px 10px;
+  background-color: #2874f0;
+  padding: 8px 45px;
   width: 100%;
-  box-sizing: border-box; 
-  overflow-x: hidden;     
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+/* Search + button */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  flex: 1; /* take available space */
+  max-width: 100%; /* prevent overflow */
+  margin-right: 1px;
+}
+
+.navbar-search input {
+  flex: 1;
+  min-width: 0; /* ✅ fixes overflow */
+  padding: 3px;
+  border: none;
+  border-radius: 2px 0 0 2px;
+}
+
+/* .navbar-search button {
+  background: #ffe11b;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+  flex-shrink: 0;
+} */
+/* Cart button */
+.navbar-cart {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap; /* ✅ keep text in one line */
+  flex-shrink: 0;
+  
+}
+
+/* ✅ Media query (mobile fix) */
+@media (max-width: 868px) {
+  .navbar {
+    padding-left: 1px;
+   
+    
+  }
+
+  .navbar-search {
+    margin-right: 2px;
+  }
+
+  .navbar-search input {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  
+
+  .navbar-cart {
+    font-size: 14px;
+    margin-left: 100px;
+  }
+}
+
+/* Branding */
 .brand {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
-  margin: 0;   /* ✅ removed any margin */
+  margin: 0;
+  color: white; /* ✅ white like Flipkart */
 }
 
+/* Search */
 .search-container {
   flex: 1;
-  margin: 0 5px; 
+  margin: 0 5px;
 }
 
 .search-input {
   width: 100%;
   padding: 4px 6px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
   outline: none;
 }
 
+/* Right Side Buttons */
 .right-buttons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
 }
 
-.search-toggle,
+
 .cart-btn-mobile {
   background: none;
   border: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  position: relative;
+  
+  margin-left: 15px;
+ 
 }
 
 .cart-badge {
   position: absolute;
-  top: -6px;
-  right: -8px;
+  top: 3px;
+  right: 60px;
   background: red;
   color: white;
-  font-size: 0.7rem;
-  padding: 2px 5px;
+  font-size: 0.5rem;
+  padding: 2px 9px;
+
   border-radius: 50%;
 }
 
 /* 🔹 Media Queries */
 @media (max-width: 768px) {
   .brand {
-    font-size: 1.2rem;
-    margin: 0;   /* ✅ remove left margin */
-margin-left: 0;  
+    font-size: 1.1rem;
+    margin: 0;
   }
 
   .search-container {
     flex: unset;
     width: 50%;
-    margin: 0;   /* ✅ remove margins */
-    margin-left: 0;
+    margin: 0;
   }
 
-  .right-buttons {
-    gap: 6px;
-  }
+  /* .right-buttons {
+    gap: 4px;
+    margin-left: 20px;
+    padding-left: 30px;
+  } */
 }
 
 @media (max-width: 480px) {
   .brand {
     font-size: 1rem;
-    margin: 0;   /* ✅ no left margin on small phones */
+    margin: 0;
   }
 
   .search-container {
-    width: 45%;
-    margin: 0;   /* ✅ remove margins */
-    margin-left: 0;
+    width: 100px;
+    margin: 2;
   }
 
-  .right-buttons {
-    gap: 3px;
-  }
+  /* .right-buttons {
+    gap: 1px;
+    margin-left: 4px;
+  } */
 }

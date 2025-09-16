@@ -8,10 +8,10 @@ export default function ProductCard({ product }) {
   return (
     <div
       className="
-       border rounded-lg shadow p-4 bg-white
-    flex flex-col items-center
-    w-full sm:w-1/6 md:w-1/3 lg:w-1/4
-    box-border
+        border rounded-lg shadow p-4 bg-white
+        flex flex-col items-center
+        w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5
+        box-border
       "
     >
       {/* Product Image */}
@@ -22,21 +22,21 @@ export default function ProductCard({ product }) {
       />
 
       {/* Product Name & Price */}
-      <h2 className="font-bold text-lg">{product.name}</h2>
+      <h2 className="font-bold text-lg ">{product.name}</h2>
       <p className="text-gray-700 mb-2">₹{product.price}</p>
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-2 w-full mt-2">
         <button
           onClick={() => dispatch({ type: "ADD", payload: product })}
-          className="bg-blue-300 text-dark py-1 px-2 rounded hover:bg-blue-700 transition flex-1 text-center"
+          className="bg-blue-500 text-dark py-1 px-2 rounded hover:bg-blue-700 transition flex-1 text-center"
         >
           Add to Cart
         </button>
 
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className=" mx-3 btn btn-primary bg-gray-600 text-white py-1 px-2 rounded hover:bg-gray-700 transition flex-1 text-center"
+          className=" mx-3 btn btn-primary bg-gray-500 text-white py-1 px-2 rounded hover:bg-gray-700 transition flex-1 text-center"
         >
           {showDetails ? "Hide Details" : "View Details"}
         </button>
