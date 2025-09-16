@@ -1,0 +1,25 @@
+/* Default buttons (desktop/tablet) */
+.product-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.product-buttons button {
+  padding: 6px 12px;
+  font-size: 14px;
+  white-space: nowrap; /* ✅ keep text in one line */
+}
+
+/* ✅ Mobile fix */
+@media (max-width: 480px) {
+  .product-buttons {
+    justify-content: space-between;
+  }
+
+  .product-buttons button {
+    flex: 1;            /* both take equal width */
+    padding: 5px 6px;   /* smaller padding */
+    font-size: 12px;    /* smaller text */
+  }
+}

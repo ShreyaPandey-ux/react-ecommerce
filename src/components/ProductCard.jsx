@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
+import "../style.css";
+
 
 export default function ProductCard({ product }) {
   const { dispatch } = useCart();
@@ -26,21 +28,22 @@ export default function ProductCard({ product }) {
       <p className="text-gray-700 mb-2">₹{product.price}</p>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-2 w-full mt-2">
-        <button
-          onClick={() => dispatch({ type: "ADD", payload: product })}
-          className="bg-blue-500 text-dark py-1 px-2 rounded hover:bg-blue-700 transition flex-1 text-center"
-        >
-          Add to Cart
-        </button>
+     <div className="flex gap-2 w-full mt-2 product-buttons">
+  <button
+    onClick={() => dispatch({ type: "ADD", payload: product })}
+    className="bg-blue-500 text-dark py-1 px-2 rounded hover:bg-blue-700 transition flex-1 text-center"
+  >
+    Add to Cart
+  </button>
 
-        <button
-          onClick={() => setShowDetails(!showDetails)}
-          className=" mx-3 btn btn-primary bg-gray-500 text-white py-1 px-2 rounded hover:bg-gray-700 transition flex-1 text-center"
-        >
-          {showDetails ? "Hide Details" : "View Details"}
-        </button>
-      </div>
+  <button
+    onClick={() => setShowDetails(!showDetails)}
+    className="mx-3 btn btn-primary bg-gray-500 text-white py-1 px-2 rounded hover:bg-gray-700 transition flex-1 text-center"
+  >
+    {showDetails ? "Hide Details" : "View Details"}
+  </button>
+</div>
+
 
       {/* Product Details */}
       {showDetails && (

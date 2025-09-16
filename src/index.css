@@ -118,18 +118,18 @@
   font-size: 1.5rem;
   cursor: pointer;
   
-  margin-left: 15px;
+  margin-left: 35px;
  
 }
 
 .cart-badge {
-  position: absolute;
-  top: 3px;
-  right: 60px;
+  position:relative;
+  top: -15px;
+  right:8px;
   background: red;
   color: white;
-  font-size: 0.5rem;
-  padding: 2px 9px;
+  font-size: 0.6rem;
+  padding: 5px 8px;
 
   border-radius: 50%;
 }
@@ -137,7 +137,7 @@
 /* 🔹 Media Queries */
 @media (max-width: 768px) {
   .brand {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 0;
   }
 
@@ -162,11 +162,11 @@
 
   .search-container {
     width: 100px;
-    margin: 2;
+    margin: 3;
   }
 
-  /* .right-buttons {
+  .right-buttons {
     gap: 1px;
     margin-left: 4px;
-  } */
+  }
 }
