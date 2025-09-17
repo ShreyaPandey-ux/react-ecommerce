@@ -86,7 +86,7 @@
   cursor: pointer;
   white-space: nowrap;
   margin: 0;
-  color: white; /* ✅ white like Flipkart */
+  color: white; 
 }
 
 /* Search */
